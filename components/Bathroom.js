@@ -194,7 +194,7 @@ const Bathroom = () => {
               />
             </View>
             <View style={styles.factor}>
-              <Text style={styles.factorTitle}>Number of Doors</Text>
+              <Text style={styles.factorTitle}>Doors</Text>
               <NumericInput
                 onChange={value => setDoors(value)}
                 value={doors}
@@ -217,7 +217,7 @@ const Bathroom = () => {
               />
             </View>
             <View style={styles.factor}>
-              <Text style={styles.factorTitle}>Number of Windows (Retrim)</Text>
+              <Text style={styles.factorTitle}>Windows (Retrim)</Text>
               <NumericInput
                 onChange={value => setWindows(value)}
                 value={windows}
