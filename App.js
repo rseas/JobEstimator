@@ -1,20 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+
+import Addition from './components/Addition';
+import Bathroom from './components/Bathroom';
+import Deck from './components/Deck';
+
+const Tab = createMaterialTopTabNavigator();
 
 export default function App() {
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <NavigationContainer>
+        <Tab.Navigator style={{paddingTop: 25}}>
+          <Tab.Screen name="Addition" component={Addition} />
+          <Tab.Screen name="Bathroom" component={Bathroom} />
+          <Tab.Screen name="Deck" component={Deck} />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
