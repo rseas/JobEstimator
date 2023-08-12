@@ -6,13 +6,14 @@ import styles from "./styles";
 
 const Deck = () => {
     const [total, setTotal] = useState(0);
-    const [sqft, setSQFT] = useState(0);
+    const [sqft, setSQFT] = useState('1');
     const [mat, setMat] = useState('Wood');
     const [footers, setFooters] = useState(0);
     const [size, setSize] = useState('2x8');
 
     const calcTotal = () => {
-        setTotal(100);
+      let ret = 0;
+      squareFeet = parseFloat(sqft);
     }
 
     return (

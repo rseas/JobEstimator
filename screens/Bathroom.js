@@ -7,9 +7,9 @@ import styles from "./styles";
 
 const Bathroom = () => {
   const [total, setTotal] = useState(0);
-  const [sqft, setSQFT] = useState(0);
-  const [lnft, setLNFT] = useState(0);
-  const [ceilingHeight, setCeilingHeight] = useState(0);
+  const [sqft, setSQFT] = useState('0');
+  const [lnft, setLNFT] = useState('0');
+  const [ceilingHeight, setCeilingHeight] = useState('0');
   const [lvp, setLVP] = useState(0);
   const [tile, setTile] = useState('12x12');
   const [painting, setPainting] = useState(true);
@@ -20,14 +20,15 @@ const Bathroom = () => {
   const [vLights, setVLights] = useState(1);
   const [toiletries, setToiletries] = useState(false);
   const [fan, setFan] = useState(false);
-  const [doors, setDoors] = useState('');
+  const [doors, setDoors] = useState(0);
   const [newDoor, setNewDoor] = useState(false);
   const [windows, setWindows] = useState(0);
   const [trim, setTrim] = useState('3 1/4');
   const [casing, setCasing] = useState(0)
 
   const calcTotal = () => {
-    setTotal(100);
+    let ret = 0;
+    squareFeet = parseFloat(sqft);
   }
     return (
       <KeyboardAwareScrollView>

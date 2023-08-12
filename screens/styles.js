@@ -16,9 +16,17 @@ export default StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center'
       },
+      factorHeader: {
+        
+      },
       factorTitle: {
-        fontSize: "30%",
+        fontSize: 30,
         fontFamily: 'Copperplate'
+      },
+      factorSubTitle: {
+        fontSize: 30,
+        fontFamily: 'Copperplate',
+        color: '#565656'
       },
       input: {
         height: 50,
