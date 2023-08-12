@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { Text, StyleSheet, View, TextInput, TouchableOpacity } from "react-native";
+import { Text, View, TextInput, TouchableOpacity } from "react-native";
 import NumericInput from 'react-native-numeric-input';
 import SwitchSelector from "react-native-switch-selector";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
@@ -104,11 +104,11 @@ const Bathroom = () => {
               <Text style={styles.factorTitle}>Tub or Shower</Text>
               <SwitchSelector
                 options={[
-                  {label: 'Tub W Enclosure', value: 'Tub'},
-                  {label: 'Shower W Enclosure', value: 'Shower'}
+                  {label: 'Tub', value: 'Tub'},
+                  {label: 'Shower', value: 'Shower'}
                 ]}
                 hasPadding
-                style={{width: '50%'}}
+                style={{width: '30%'}}
                 onPress={value => setTubShower(value)}
                 initial={0}
                 buttonColor={'#fff700'}

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { Text, StyleSheet, View, TextInput, TouchableOpacity } from "react-native";
+import { Text, View, TextInput, TouchableOpacity } from "react-native";
 import NumericInput from 'react-native-numeric-input';
 import SwitchSelector from "react-native-switch-selector";
 import styles from "./styles";

@@ -5,19 +5,19 @@ export default StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
-        paddingTop: 25,
+        paddingTop: 25
       },
       factorList: {
-    
+        width: '80%'
       },
       factor: {
         flexDirection: 'row',
         height: 80,
         justifyContent: 'space-between',
-        alignItems: 'center',
+        alignItems: 'center'
       },
       factorTitle: {
-        fontSize: 30,
+        fontSize: "30%",
         fontFamily: 'Copperplate'
       },
       input: {
