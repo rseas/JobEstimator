@@ -70,6 +70,9 @@ const Addition = () => {
               totalHeight={60}
               minValue={0}
               maxValue={10}
+              rounded
+              rightButtonBackgroundColor={'#F5f5f5'}
+              leftButtonBackgroundColor={'#F5f5f5'}
             />
             <SwitchSelector
                 options={[
@@ -122,6 +125,9 @@ const Addition = () => {
               totalHeight={60}
               minValue={0}
               maxValue={6}
+              rounded
+              rightButtonBackgroundColor={'#F5f5f5'}
+              leftButtonBackgroundColor={'#F5f5f5'}
             />
           </View>
           <View style={styles.factor}>
@@ -133,6 +139,9 @@ const Addition = () => {
               totalHeight={60}
               minValue={0}
               maxValue={70}
+              rounded
+              rightButtonBackgroundColor={'#F5f5f5'}
+              leftButtonBackgroundColor={'#F5f5f5'}
             />
           </View>
         </View>

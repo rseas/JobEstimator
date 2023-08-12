@@ -35,10 +35,13 @@ const Deck = () => {
             <NumericInput
               onChange={value => setFooters(value)}
               value={footers}
-              totalWidth={120}
+              totalWidth={140}
               totalHeight={60}
               minValue={0}
               maxValue={50}
+              rounded
+              rightButtonBackgroundColor={'#F5f5f5'}
+              leftButtonBackgroundColor={'#F5f5f5'}
             />
           </View>
           <View style={styles.factor}>

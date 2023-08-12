@@ -14,19 +14,21 @@ export default StyleSheet.create({
         flexDirection: 'row',
         height: 80,
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
       },
       factorHeader: {
         
       },
       factorTitle: {
         fontSize: 30,
-        fontFamily: 'Copperplate'
+        fontFamily: 'Copperplate',
+        textTransform: 'uppercase',
       },
       factorSubTitle: {
         fontSize: 30,
         fontFamily: 'Copperplate',
-        color: '#565656'
+        color: '#565656',
+        textTransform: 'lowercase'
       },
       input: {
         height: 50,
@@ -40,14 +42,17 @@ export default StyleSheet.create({
         borderRadius: 5,
       },
       calculate: {
-        borderWidth: 1,
         borderRadius: 10,
         backgroundColor: '#03c04a',
         alignItems: 'center', 
         width: '40%',
         height: 60,
         justifyContent: 'center',
-        margin: 30
+        margin: 30,
+        shadowColor: 'rgba(0,0,0, .4)',
+        shadowOffset: { height: 2, width: 1 }, 
+        shadowOpacity: 1, 
+        shadowRadius: 1
       },
       calcText: {
         fontFamily: 'Copperplate',
