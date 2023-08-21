@@ -4,11 +4,12 @@ export default StyleSheet.create({
     screen: {
         backgroundColor: '#fff',
         alignItems: 'center',
-        justifyContent: 'center',
-        paddingTop: 25
       },
       factorList: {
-        width: '80%'
+        width: '90%',
+        justifyContent: 'space-between',
+        marginLeft: '5%',
+        marginRight: '5%'
       },
       factor: {
         flexDirection: 'row',
@@ -64,12 +65,11 @@ export default StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        marginBottom: 60,
-        padding: 20
+        marginBottom: 40
       },
       totalText: {
         fontSize: 40,
-        fontFamily: 'Copperplate',
+        fontFamily: 'Helvetica-Bold',
         color: '#808080'
       },
       totalNum: {

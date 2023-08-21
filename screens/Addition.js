@@ -15,14 +15,15 @@ const Addition = () => {
     const [kitch, setKitch] = useState(false);
     const [miniSplits, setMiniSplits] = useState(0);
     const [labor, setLabor] = useState(0);
+    const [misc, setMisc] = useState(0);
 
     const calcTotal = () => {
       let ret = 0;
       squareFeet = parseFloat(sqft);
       let base = 175;
-      if(elec){
-        base += 12;
-      }
+
+      if(elec){ base += 12;}
+      
       ret += base*squareFeet;
 
       if(bath!=0){
@@ -32,17 +33,12 @@ const Addition = () => {
           ret += bath*17000;
         }
       }
-
-      if(bathPlum){
-        ret += 7000;
-      }
-      if(kitch){
-        ret += 3000;
-      }
+      if(bathPlum){ ret += 7000; }
+      if(kitch){ ret += 3000; }
 
       ret += (miniSplits*7000);
-
       ret += (labor*1600);
+      ret+= misc;
 
       setTotal(ret)
     }
@@ -139,6 +135,21 @@ const Addition = () => {
               totalHeight={60}
               minValue={0}
               maxValue={70}
+              rounded
+              rightButtonBackgroundColor={'#F5f5f5'}
+              leftButtonBackgroundColor={'#F5f5f5'}
+            />
+          </View>
+          <View style={styles.factor}>
+            <Text style={styles.factorTitle}>Misc Add-Ons ($)</Text>
+            <NumericInput
+              onChange={value => setMisc(value)}
+              value={misc}
+              totalWidth={200}
+              totalHeight={60}
+              minValue={0}
+              maxValue={3000}
+              step={10}
               rounded
               rightButtonBackgroundColor={'#F5f5f5'}
               leftButtonBackgroundColor={'#F5f5f5'}
