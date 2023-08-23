@@ -16,6 +16,7 @@ const Deck = () => {
     const [railing, setRailing] = useState('Wood');
     const [numRailing, setNumRailing] = useState(0);
     const [misc, setMisc] = useState(0);
+    const [resetCounter, setResetCounter] = useState(0);
 
     const calcTotal = () => {
       let ret = 0;
@@ -114,9 +115,24 @@ const Deck = () => {
       Sharing.shareAsync(pdfName);
     }
 
+    const reset = () => {
+      setResetCounter(resetCounter + 1);
+      setSQFT('0');
+      setFooters(0);
+      setMat('Wood');
+      setNumRailing(0);
+      setRailing('Wood');
+      setMisc(0);
+      setTotal(0);
+    };
 
     return (
-      <View style={styles.screen}>
+      <View key={resetCounter} style={styles.screen}>
+        <View style={styles.resetContainer}>
+          <TouchableOpacity onPress={reset} style={styles.resetButton}>
+            <MaterialCommunityIcons name="refresh" size={45} color="#3790F3" />
+          </TouchableOpacity>
+        </View>
         <View style={styles.factorList}>
           <View style={styles.factor}>
             <Text style={styles.factorTitle}>Square Footage</Text>
@@ -200,17 +216,21 @@ const Deck = () => {
             />
           </View>
         </View>
-        <TouchableOpacity onPress={calcTotal} style={styles.calculate}>
-          <Text style={styles.calcText}>CALCULATE</Text>
-        </TouchableOpacity>
+        <View style={{alignItems: 'center'}}>
+          <TouchableOpacity onPress={calcTotal} style={styles.calculate}>
+            <Text style={styles.calcText}>CALCULATE</Text>
+          </TouchableOpacity>
+        </View>
         <View style={styles.totalContainer}>
             <Text style={styles.totalText}>ESTIMATE: </Text>
             <Text style={styles.totalNum}>${total}</Text>
         </View>
-        <TouchableOpacity onPress={prompt} style={styles.exportButton}>
-          <Text style={styles.exportText}>Export to PDF </Text>
-          <MaterialCommunityIcons name="export-variant" size={24} color="blue" />
-        </TouchableOpacity>
+        <View style={styles.exportButtonContainer}>
+          <TouchableOpacity onPress={prompt} style={styles.exportButton}>
+            <Text style={styles.exportText}>Export to PDF </Text>
+            <MaterialCommunityIcons name="export-variant" size={24} color="blue" />
+          </TouchableOpacity>
+        </View>
       </View>
     );
 };

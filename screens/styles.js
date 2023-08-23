@@ -3,7 +3,6 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
     screen: {
         backgroundColor: '#fff',
-        alignItems: 'center',
       },
       factorList: {
         width: '90%',
@@ -53,7 +52,7 @@ export default StyleSheet.create({
         shadowColor: 'rgba(0,0,0, .4)',
         shadowOffset: { height: 2, width: 1 }, 
         shadowOpacity: 1, 
-        shadowRadius: 1
+        shadowRadius: 1,
       },
       calcText: {
         fontFamily: 'Copperplate',
@@ -76,14 +75,27 @@ export default StyleSheet.create({
         fontSize: 60,
         fontWeight: "bold"
       },
+      exportButtonContainer: {
+        alignItems: 'center',
+      },
       exportButton: {
         justifyContent: 'center',
         alignContent: 'center',
         flexDirection: 'row',
-        paddingTop: 60
+        marginTop: 55,
+        padding: 10,
       },
       exportText: {
         color: 'blue',
         fontSize: 23,
+      },
+      resetContainer: {
+        alignItems: 'flex-end',
+        alignContent: 'center',
+        marginHorizontal: 15,
+        marginTop: 10,
+      },
+      resetButton: {
+        
       }
 })
