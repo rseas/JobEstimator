@@ -75,5 +75,15 @@ export default StyleSheet.create({
       totalNum: {
         fontSize: 60,
         fontWeight: "bold"
+      },
+      exportButton: {
+        justifyContent: 'center',
+        alignContent: 'center',
+        flexDirection: 'row',
+        paddingTop: 60
+      },
+      exportText: {
+        color: 'blue',
+        fontSize: 23,
       }
 })
