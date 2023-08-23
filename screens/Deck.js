@@ -74,27 +74,72 @@ const Deck = () => {
       let daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
       const html = `
-        <html>
-        <head>
-        <style>
-          body {
-            margin: 40px;
-          }
-        </style>
-        </head>
-          <body>
-            <h1 style="font-weight: bold; ">${address}</h1>
-            <h1 style="color: #747474; ">${daysOfWeek[date.getDay()]}, ${dateString}</h1>
-            <h2>ESTIMATED TOTAL :: $${total}</h2>
-            <br>
-            <h3>Square Footage: ${sqft}</h3>
-            <h3>Number of footers: ${footers}</h3>
-            <h3>Material Type: ${mat}</h3>
-            <h3>Railings: ${numRailing}, ${railing}</h3>
-            <h3>Misc add-ons: $${misc}</h3>
-          </body>
-        </html>
+      <html>
+      <head>
+          <style>
+              h1{
+                font-size: 23px;
+              }
+              h2{
+                font-size: 16px;
+                margin-bottom: 5px;
+                border-bottom: 2px solid #333;
+              }
+              h4 {
+                margin-bottom: 0px;
+                font-size: 14px;
+              }
+              h5{
+                font-size: 12px;
+                margin-bottom: 0px;
+              }
+              body {
+                margin: 40px;
+              }
+              .columns-wrapper {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+              }
+              .column {
+                padding: 0px;
+              }
+          </style>
+      </head>
       
+      <body>
+          <h1 style="font-weight: bold; ">${address}</h1>
+          <h1 style="color: #747474; ">${daysOfWeek[date.getDay()]}, ${dateString}</h1>
+          <h2>ESTIMATED TOTAL :: $${total}</h2>
+          <br>
+          <h3>Square Footage: ${sqft}</h3>
+          <h3>Number of footers: ${footers}</h3>
+          <h3>Material Type: ${mat}</h3>
+          <h3>Railings: ${numRailing}, ${railing}</h3>
+          <h3>Misc add-ons: $${misc}</h3>
+          <br>
+          <h4 style="border-top: 2px solid #333; margin-top: 10px;">-- CALCULATIONS --</h4>
+                  <h5>(16.50 * SQFT) + (275 * Number of footers) + (Misc) + {Material Type} + {Railings}</h5>
+          <div class="column-wrapper">
+              <div class="column">
+                  <h5>
+                      &emsp; Material Type :: <br>
+                      &emsp; &emsp;  Wood => 10 * SQFT <br>
+                      &emsp; &emsp; Composite => 24 * SQFT
+                  </h5>
+              </div>
+              <div class = "column">
+                  <h5>
+                      &emsp; Railings :: <br>
+                      &emsp; &emsp;  Wood => 310 * numRailings <br>
+                      &emsp; &emsp; Composite => 490 * numRailings
+                  </h5>
+              </div>
+          </div>
+          
+      </body>
+      
+      </html>
       `;
 
       const file = await Print.printToFileAsync({

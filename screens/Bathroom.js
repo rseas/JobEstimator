@@ -175,6 +175,22 @@ const Bathroom = () => {
       <html>
       <head>
       <style>
+        h1{
+          font-size: 23px;
+        }
+        h2{
+          font-size: 16px;
+          margin-bottom: 5px;
+          border-bottom: 2px solid #333;
+        }
+        h4 {
+          margin-bottom: 0px;
+          font-size: 14px;
+        }
+        h5{
+          font-size: 12px;
+          margin-bottom: 0px;
+        }
         body {
           margin: 40px;
         }
@@ -185,46 +201,123 @@ const Bathroom = () => {
         }
         
         .column {
-          padding: 10px;
+          padding: 0px;
+
+        }
+        .grid-container {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+          gap: 5px; /* Gap between columns */
         }
         
+        .columnCalc {
+          padding: 10px;
+        }
       </style>
       </head>
         <body>
           <h1 style="font-weight: bold; ">${address}</h1>
           <h1 style="color: #747474; ">${daysOfWeek[date.getDay()]}, ${dateString}</h1>
           <h2>ESTIMATED TOTAL :: $${total}</h2>
-          <br>
           <div class="columns-wrapper">
             <div class="column">
-              <h3>Square Footage: ${sqft}</h3>
-              <h3>Linear Footage: ${lnft}</h3>
-              <h3>Ceiling Height: ${ceilingHeight} in.</h3>
-              <h3>LVP: ${yesno(lvp)}</h3>
-              <h3>Tile: ${yesno(tile)}</h3>
-              <h3>Tub/Shower: ${tubShower}</h3>
-              <h3>Shower Door: ${yesno(showerDoor)}</h3>
-              <h3>Toilets: ${toilets}</h3>
-              <h3>Mirrors: ${mirrors}</h3>
-              <h3>Vanity Size: ${vanity}</h3>
-              <h3>Vanity Lights: ${vLights}</h3>
+              <h4>Square Footage: ${sqft}</h4>
+              <h4>Linear Footage: ${lnft}</h4>
+              <h4>Ceiling Height: ${ceilingHeight} in.</h4>
+              <h4>LVP: ${yesno(lvp)}</h4>
+              <h4>Tile: ${yesno(tile)}</h4>
+              <h4>Tub/Shower: ${tubShower}</h4>
+              <h4>Shower Door: ${yesno(showerDoor)}</h4>
+              <h4>Toilets: ${toilets}</h4>
+              <h4>Mirrors: ${mirrors}</h4>
+              <h4>Vanity Size: ${vanity}</h4>
+              <h4>Vanity Lights: ${vLights}</h4>
             </div>
             <div class="column">
-              <h3>Toiletries: ${yesno(toiletries)}</h3>
-              <h3>Exhaust Fan: ${yesno(fan)}</h3>
-              <h3>Doors: ${doors}</h3>
-              <h3>Windows (Retrim): ${windows}</h3>
-              <h3>Trim Base: ${trim}</h3>
-              <h3>Casing Packs: ${casing}</h3>
-              <h3>Electrical: ${yesno(electrical)}$</h3>
-              <h3>Plumbing: ${yesno(plumbing)}</h3>
-              <h3>Painting: ${yesno(painting)}</h3>
-              <h3>Labor: ${labor}</h3>
-              <h3>Misc add-ons: $${misc}</h3>
+              <h4>Toiletries: ${yesno(toiletries)}</h4>
+              <h4>Exhaust Fan: ${yesno(fan)}</h4>
+              <h4>Doors: ${doors}</h4>
+              <h4>Windows (Retrim): ${windows}</h4>
+              <h4>Trim Base: ${trim}</h4>
+              <h4>Casing Packs: ${casing}</h4>
+              <h4>Electrical: ${yesno(electrical)}$</h4>
+              <h4>Plumbing: ${yesno(plumbing)}</h4>
+              <h4>Painting: ${yesno(painting)}</h4>
+              <h4>Labor: ${labor}</h4>
+              <h4>Misc add-ons: $${misc}</h4>
             </div>
           </div>
-        </body>
-      </html>
+          <h4 style="border-top: 2px solid #333; margin-top: 10px;">-- CALCULATIONS --</h4>
+          <h5>{LVP} + {Tile} + {TubShower} + {ShowerDoor} + (280 * toilets) + (130 * mirrors) + {Vanity} + {VanityLights} +<br>&emsp; {Toiletries} + {Fan} + {Trim} + {Electrical} + {Plumbing} + {Painting} + (250 * doors) + (110 * windows) +<br>&emsp; (60 * casing) + (1600 * labor) + (Misc)</h5>
+        <div class="grid-container">
+          <div class="columnCalc">
+              <h5>
+                  &emsp; LVP :: <br>
+                  &emsp; &emsp;  True => $4.80 * SQFT<br>
+              </h5>
+              <h5>
+                  &emsp; Tile :: <br>
+                  &emsp; &emsp;  True => $12 * SQFT<br>
+              </h5>
+              <h5>
+                  &emsp; TubShower :: <br>
+                  &emsp; &emsp;  Tub => + $1500<br>
+                  &emsp; &emsp; Shower => + $1500
+              </h5>
+              <h5>
+                  &emsp; ShowerDoor :: <br>
+                  &emsp; &emsp;  True => + $1500<br>
+              </h5>
+              <h5>
+                  &emsp; Fan :: <br>
+                  &emsp; &emsp;  True => + $160<br>
+              </h5>
+          </div>
+          <div class = "columnCalc">
+              <h5>
+                  &emsp; Vanity :: <br>
+                  &emsp; &emsp;  18" => + $300<br>
+                  &emsp; &emsp; 24" => + $400<br>
+                  &emsp; &emsp;  32" => + $500<br>
+                  &emsp; &emsp; 48" => + $700<br>
+                  &emsp; &emsp;  72" => + $2000<br>
+                  &emsp; &emsp; N/A => + $0<br>
+              </h5>
+              <h5>
+                  &emsp; Vanity Lights :: <br>
+                  &emsp; &emsp;  1 => + $70<br>
+                  &emsp; &emsp; 2 => + $100<br>
+                  &emsp; &emsp;  3 => + $120<br>
+                  &emsp; &emsp; 4 => + $160<br>
+                  &emsp; &emsp;  N/A => + $0<br>
+              </h5>
+          </div>
+          <div class="columnCalc">
+              <h5>
+                  &emsp; Trim :: <br>
+                  &emsp; &emsp;  3 1/4 => + $1.75 * LNFT<br>
+                  &emsp; &emsp; 5 1/4 => + $3.40 * LNFT
+              </h5>
+              <h5>
+                  &emsp; Toiletries :: <br>
+                  &emsp; &emsp;  True => + $110 <br>
+              </h5>
+              <h5>
+                  &emsp; Electrical :: <br>
+                  &emsp; &emsp;  True => + $1500<br>
+              </h5>
+              <h5>
+                  &emsp; Plumbing :: <br>
+                  &emsp; &emsp;  True => + $2500<br>
+              </h5>
+              <h5>
+                  &emsp; Painting :: <br>
+                  &emsp; &emsp;  True => + $4 * CeilingHeight<br>
+              </h5>
+          </div>
+        </div>
+      </body>
+    </html>
     
     `;
 

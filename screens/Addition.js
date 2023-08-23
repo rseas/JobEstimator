@@ -66,28 +66,78 @@ const Addition = () => {
       let daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
       const html = `
-        <html>
-        <head>
-        <style>
-          body {
-            margin: 40px;
-          }
-        </style>
-        </head>
-          <body>
-            <h1 style="font-weight: bold; ">${address}</h1>
-            <h1 style="color: #747474; ">${daysOfWeek[date.getDay()]}, ${dateString}</h1>
-            <h2>ESTIMATED TOTAL :: $${total}</h2>
-            <br>
-            <h3>Square Footage: ${sqft}</h3>
-            <h3>Bathrooms: ${bath}, ${bathSP}</h3>
-            <h3>Electrical: ${yesno(elec)}</h3>
-            <h3>Plumbing::: Bathroom: ${yesno(bathPlum)}  Kitchen: ${yesno(kitch)}</h3>
-            <h3>Mini Splits: ${miniSplits}</h3>
-            <h3>Labor: ${labor} days</h3>
-            <h3>Misc add-ons: $${misc}</h3>
-          </body>
-        </html>
+      <html>
+      <head>
+      <style>
+        h1{
+          font-size: 23px;
+        }
+        h2{
+          font-size: 16px;
+          margin-bottom: 5px;
+          border-bottom: 2px solid #333;
+        }
+        h4 {
+          margin-bottom: 0px;
+          font-size: 14px;
+        }
+        h5{
+          font-size: 12px;
+          margin-bottom: 0px;
+        }
+        body {
+          margin: 40px;
+        }
+        .columns-wrapper {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+        }
+        .column {
+          padding: 0px;
+        }
+      </style>
+      </head>
+        <body>
+          <h1 style="font-weight: bold; ">${address}</h1>
+          <h1 style="color: #747474; ">${daysOfWeek[date.getDay()]}, ${dateString}</h1>
+          <h2>ESTIMATED TOTAL :: $${total}</h2>
+          <br>
+          <h3>Square Footage: ${sqft}</h3>
+          <h3>Bathrooms: ${bath}, ${bathSP}</h3>
+          <h3>Electrical: ${yesno(elec)}</h3>
+          <h3>Plumbing::: Bathroom: ${yesno(bathPlum)}  Kitchen: ${yesno(kitch)}</h3>
+          <h3>Mini Splits: ${miniSplits}</h3>
+          <h3>Labor: ${labor} days</h3>
+          <h3>Misc add-ons: $${misc}</h3>
+          <br>
+          <h4 style="border-top: 2px solid #333; margin-top: 10px;">-- CALCULATIONS --</h4>
+            <h5>((175 + {Elec}) * SQFT) + {Bath} + {BathPlum} + {Kitchen} + <br>&emsp; (miniSplits * 7000) + (labor * 1600) + (Misc)</h5>
+          <div class="column-wrapper">
+            <div class="column">
+                <h5>
+                    &emsp; Elec :: <br>
+                    &emsp; &emsp;  True => add $12 to base<br>
+                </h5>
+                <h5>
+                    &emsp; Bath :: <br>
+                    &emsp; &emsp;  Standard => 13,000 * numBath <br>
+                    &emsp; &emsp; Premium => 17,000 * numBath
+                </h5>
+            </div>
+            <div class = "column">
+                <h5>
+                    &emsp; BathPlum :: <br>
+                    &emsp; &emsp;  True => + $7000 <br>
+                </h5>
+                <h5>
+                    &emsp; Kitchen :: <br>
+                    &emsp; &emsp;  True => + $3000<br>
+                </h5>
+            </div>
+          </div>
+        </body>
+      </html>
       
       `;
 
