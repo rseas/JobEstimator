@@ -1,4 +1,5 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
+import { TextInputField, NumInputField } from './../components';
 import { Text, View, TextInput, TouchableOpacity, Switch, Alert } from "react-native";
 import NumericInput from 'react-native-numeric-input';
 import SwitchSelector from "react-native-switch-selector";

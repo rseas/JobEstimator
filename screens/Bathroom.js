@@ -1,4 +1,5 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
+import { TextInputField, NumInputField } from './../components';
 import { Text, View, TextInput, TouchableOpacity, Switch, Alert } from "react-native";
 import NumericInput from 'react-native-numeric-input';
 import SwitchSelector from "react-native-switch-selector";
@@ -375,17 +376,7 @@ const Bathroom = () => {
           </TouchableOpacity>
         </View>
         <View style={styles.factorList}>
-          <View style={styles.factor}>
-            <Text style={styles.factorTitle}>Square Footage</Text>
-            <TextInput
-              style={[styles.input, {width: '20%', fontSize: 20}]}
-              keyboardType="number-pad"
-              inputMode="numeric"
-              onChangeText={(text) => setSQFT(text)}
-              value={sqft}
-              textAlign="center"
-            />
-          </View>
+          <TextInputField   title="Square Footage" set={setSQFT} value={sqft}  />
           <View style={styles.factor}>
             <Text style={styles.factorTitle}>Linear Footage</Text>
             <TextInput
