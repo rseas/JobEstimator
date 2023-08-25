@@ -150,7 +150,7 @@ const Deck = () => {
       const pdfName = `${file.uri.slice(
         0,
         file.uri.lastIndexOf('/') + 1
-      )}addition-${address.replace(/\s/g, '_' )}.pdf`
+      )}deck-${address.replace(/\s/g, '_' )}.pdf`
 
       await FileSystem.moveAsync({
           from: file.uri,

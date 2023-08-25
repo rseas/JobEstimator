@@ -330,7 +330,7 @@ const Bathroom = () => {
     const pdfName = `${file.uri.slice(
       0,
       file.uri.lastIndexOf('/') + 1
-    )}addition-${address.replace(/\s/g, '_' )}.pdf`
+    )}bathroom-${address.replace(/\s/g, '_' )}.pdf`
 
     await FileSystem.moveAsync({
         from: file.uri,
