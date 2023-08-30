@@ -6,6 +6,10 @@ Job Estimator is an application developed directly for A&A Renovations and Const
 
 Currently, there are three types of jobs supported by the application, more specifically: additions, bathroom rennovations, and deck jobs.  This application is made primarily for usage on an IPad.
 
+# Technologies
+-React Native
+-Node js
+
 # Functions
 
 Client will be able to enter application and fill in required fields.  The app will then compute the estimate based on entered data.
